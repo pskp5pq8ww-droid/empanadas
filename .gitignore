@@ -1,0 +1,14 @@
+node_modules/
+dist/
+client-dist/
+.env
+.env.*
+!.env.example
+coverage/
+*.log
+.DS_Store
+.idea/
+.vscode/
+.codex-spreadsheet-work/
+prisma/*.db
+outputs/

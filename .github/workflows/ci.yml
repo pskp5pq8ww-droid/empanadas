@@ -1,0 +1,26 @@
+name: Calidad
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    env:
+      DATABASE_URL: mysql://usuario:clave@127.0.0.1:3306/empanadas_test
+      SESSION_SECRET: secreto-de-pruebas-de-al-menos-32-caracteres
+      CRON_SECRET: otro-secreto-de-pruebas-de-al-menos-32-caracteres
+      APP_URL: http://localhost:3000
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build
