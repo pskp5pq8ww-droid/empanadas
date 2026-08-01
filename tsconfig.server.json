@@ -11,6 +11,6 @@
     "sourceMap": true,
     "types": ["node"]
   },
-  "include": ["server/**/*.ts", "shared/**/*.ts", "scripts/**/*.ts", "prisma/seed.ts"],
+  "include": ["server/index.ts", "server/memory-app.ts", "server/schemas.ts", "shared/**/*.ts"],
   "exclude": ["**/*.test.ts"]
 }

@@ -6,7 +6,7 @@
   "engines": { "node": ">=22.12 <23" },
   "scripts": {
     "dev": "concurrently -n api,web -c '#9B6A4E,#D98B62' \"tsx watch server/index.ts\" \"vite --host 0.0.0.0\"",
-    "build": "npm run db:generate && vite build && tsc -p tsconfig.server.json && node scripts/prepare-production-database.mjs",
+    "build": "vite build && tsc -p tsconfig.server.json",
     "postinstall": "npm run build",
     "start": "node dist/server/index.js",
     "test": "vitest run",

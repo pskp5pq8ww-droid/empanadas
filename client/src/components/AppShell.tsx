@@ -17,6 +17,7 @@ export function AppShell({ children }: { children: ReactNode }) {
     </aside>}
     <main className="main-content">
       <header className="topbar"><div><small>{collaborator ? 'Portal del colaborador' : 'Administración'}</small><strong>{user?.name}</strong></div><span className="avatar" aria-hidden="true">{user?.name.charAt(0)}</span></header>
+      <div className="temporary-storage-banner" role="status"><strong>Modo temporal:</strong> la base de datos está desconectada. Los registros funcionan durante esta sesión, pero se reinician al volver a desplegar o reiniciar el servidor.</div>
       <div className="page">{children}</div>
     </main>
     {collaborator && <nav className="bottom-nav" aria-label="Navegación del colaborador">
